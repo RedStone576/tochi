@@ -21,6 +21,7 @@ export interface Data
     }>
 }
 
+// needs polishing zz
 export function run(type: "40l" | "blitz" | "any", context: "global" | "userbest" | "userrecent", identifier: string | undefined = undefined)
 {
     return get<Data>(endpoint(type, context, identifier))

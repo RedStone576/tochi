@@ -37,5 +37,7 @@ limit: number | undefined = undefined,
 after: number | undefined = undefined, 
 before: number| undefined = undefined)
 {
+    if (country !== undefined) country = country.toUpperCase()
+
     return get<Data>(endpoint(country, limit, after, before))
 }

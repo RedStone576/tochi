@@ -32,5 +32,7 @@ export interface Data
 
 export function run(country: string | undefined = undefined)
 {
+    if (country !== undefined) country = country.toUpperCase()
+
     return get<Data>(endpoint(country))
 }

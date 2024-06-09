@@ -71,5 +71,5 @@ export interface Data
 
 export function run(user: string)
 {
-    return get<Data>(endpoint(user))
+    return get<Data>(endpoint(user.toLowerCase()))
 }
