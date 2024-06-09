@@ -25,4 +25,5 @@ the current to-dos is:
 - `fetch` injection thingy
 - some more polishing
 - docs? idk
+- improve structures zzz
 */

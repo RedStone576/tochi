@@ -1,15 +1,29 @@
 {
     "name": "tochi",
     "version": "1.0.0",
-    "description": "",
+    "description": "tetra channel api wrapper for node.js",
+    "author": "RedStone576",
+    "license": "Artistic-2.0",
+    "homepage": "https://github.com/RedStone576/tochi",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RedStone576/tochi"
+    },
+    "bugs": {
+        "url": "https://github.com/RedStone576/tochi",
+        "email": "cecilymezzo@gmail.com"
+    },
+    "keywords": [
+        "tetrio",
+        "tetr.io"
+    ],
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
+    
     "scripts": {
         "bundle": "tsup src/index.ts --format cjs,esm --dts --target es2022"
     },
-    "author": "RedStone576",
-    "license": "Artistic-2.0",
     "devDependencies": {
         "tsup": "^8.1.0",
         "typescript": "^5.4.5"
