@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export const endpoint = (stream: string, limit: number | undefined = undefined) => (limit !== undefined) ? `/news/${stream}?limit=${limit}` : `/news/${stream}` as "/news/{stream}" | "/news/{stream}?limit={limit}"
 
@@ -13,7 +13,7 @@ export interface Data
     }>
 }
 
-export function run(stream: string, limit: number | undefined = undefined)
+export function run(stream: string, limit: number | undefined = undefined): Response<Data>
 {
     return get<Data>(endpoint(stream, limit))
 }

@@ -23,11 +23,11 @@ interface ResponseFailed
     cache: Nullish<ResponseCache>
 }
 
-type ApiResponse<T> = ResponseSuccess<T> | ResponseFailed
+export type Response<T> = Promise<ResponseSuccess<T> | ResponseFailed>
 
 const xSession = `SESS-${Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)}`
 
-export default function <T>(endpoint: string): Promise<ResponseSuccess<T> | ResponseFailed> 
+export function get<T>(endpoint: string): Promise<ResponseSuccess<T> | ResponseFailed> 
 {
     return new Promise<ResponseSuccess<T> | ResponseFailed>((resolve, reject) => 
     {

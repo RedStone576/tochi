@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export const endpoint = "/general/stats" as const
 
@@ -18,7 +18,7 @@ export interface Data
     piecesplaced: number
 }
 
-export function run()
+export function run(): Response<Data>
 {
     return get<Data>(endpoint)
 }

@@ -8,7 +8,7 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
-        "removeComments": true,
+        "removeComments": true
     },
 
     "exclude": [

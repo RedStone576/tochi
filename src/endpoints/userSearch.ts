@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export const endpoint = (snowflake: string) => `/users/search/${snowflake}` as "/users/search/{snowflake}"
 
@@ -10,7 +10,7 @@ export interface Data
     }
 }
 
-export function run(snowflake: string)
+export function run(snowflake: string): Response<Data | null>
 {
     return get<Data | null>(endpoint(snowflake))
 }

@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export const endpoint = (country: string | undefined = undefined) => 
 country === undefined ? "/users/lists/league/all" : `/users/lists/league/all?country=${country}`
@@ -30,7 +30,7 @@ export interface Data
     }>
 }
 
-export function run(country: string | undefined = undefined)
+export function run(country: string | undefined = undefined): Response<Data>
 {
     if (country !== undefined) country = country.toUpperCase()
 

@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export const endpoint = (type: "40l" | "blitz" | "any", context: "global" | "userbest" | "userrecent", identifier: string | undefined = undefined) => 
 (context !== "global") ? `/streams/${type}_${context}_${identifier}` : `/streams/${type}_${context}` as "/streams/{type}_{context}" | "/streams/{type}_{context}_{identifier}"
@@ -22,7 +22,7 @@ export interface Data
 }
 
 // needs polishing zz
-export function run(type: "40l" | "blitz" | "any", context: "global" | "userbest" | "userrecent", identifier: string | undefined = undefined)
+export function run(type: "40l" | "blitz" | "any", context: "global" | "userbest" | "userrecent", identifier: string | undefined = undefined): Response<Data>
 {
     return get<Data>(endpoint(type, context, identifier))
 }

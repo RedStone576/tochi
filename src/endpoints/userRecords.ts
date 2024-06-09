@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export const endpoint = (user: string) => `/users/${user}/records` as "/users/{username}/records" | "/users/{userID}/records"
 
@@ -38,7 +38,7 @@ export interface Data
     }
 }
 
-export function run(user: string)
+export function run(user: string): Response<Data>
 {
     return get<Data>(endpoint(user.toLowerCase()))
 }

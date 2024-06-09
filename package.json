@@ -1,14 +1,17 @@
 {
-  "name": "tochi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "RedStone576",
-  "license": "Artistic-2.0",
-  "devDependencies": {
-    "tsup": "^8.1.0"
-  }
+    "name": "tochi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "bundle": "tsup src/index.ts --format cjs,esm --dts --target es2022"
+    },
+    "author": "RedStone576",
+    "license": "Artistic-2.0",
+    "devDependencies": {
+        "tsup": "^8.1.0",
+        "typescript": "^5.4.5"
+    }
 }

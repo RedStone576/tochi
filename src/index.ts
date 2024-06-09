@@ -1,4 +1,4 @@
-export { default as get } from "./get"
+export { get } from "./get"
 export * as endpoints from "./endpoints"
 export type * as Types from "./types"
 
@@ -17,3 +17,12 @@ export { run as streams } from "./endpoints/streams"
 
 export { run as news } from "./endpoints/news"
 export { run as newsAll } from "./endpoints/newsAll"
+
+/*
+hello :3 
+the current to-dos is:
+- lower ecmascript target version
+- `fetch` injection thingy
+- some more polishing
+- docs? idk
+*/

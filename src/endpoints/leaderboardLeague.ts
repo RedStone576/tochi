@@ -1,4 +1,4 @@
-import get from "../get"
+import { get, Response } from "../get"
 
 export function endpoint(country: string | undefined = undefined, 
 limit: number | undefined = undefined, 
@@ -45,7 +45,7 @@ export interface Data
 export function run(country: string | undefined = undefined, 
 limit: number | undefined = undefined, 
 after: number | undefined = undefined, 
-before: number| undefined = undefined)
+before: number| undefined = undefined): Response<Data>
 {
     if (country !== undefined) country = country.toUpperCase()
 
