@@ -1,12 +1,19 @@
-import get from "./get"
-import { run } from "./endpoints/userSearch"
+export { default as get } from "./get"
+export * as endpoints from "./endpoints"
+export type * as Types from "./types"
 
-async function h()
-{
-    const res = await run("24247827")
+export { run as generalStats } from "./endpoints/generalStats"
+export { run as generalActivity } from "./endpoints/generalActivity"
 
-    if (!res.success) return
-    if (res.data === null) return
+export { run as userInfo } from "./endpoints/userInfo"
+export { run as userRecords } from "./endpoints/userRecords"
+export { run as userSearch } from "./endpoints/userSearch"
 
-    res.data.user.username
-}
+export { run as leaderboardLeague } from "./endpoints/leaderboardLeague"
+export { run as leaderboardLeagueAll } from "./endpoints/leaderboardLeagueAll"
+export { run as leaderboardXP } from "./endpoints/leaderboardXP"
+
+export { run as streams } from "./endpoints/streams"
+
+export { run as news } from "./endpoints/news"
+export { run as newsAll } from "./endpoints/newsAll"

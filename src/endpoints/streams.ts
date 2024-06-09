@@ -1,7 +1,7 @@
 import get from "../get"
 
 export const endpoint = (type: "40l" | "blitz" | "any", context: "global" | "userbest" | "userrecent", identifier: string | undefined = undefined) => 
-context !== "global" : `/streams/${type}_${context}_${identifier}` : `/streams/${type}_${context}` as "/streams/{type}_{context}" | "/streams/{type}_{context}_{identifier}"
+(context !== "global") ? `/streams/${type}_${context}_${identifier}` : `/streams/${type}_${context}` as "/streams/{type}_{context}" | "/streams/{type}_{context}_{identifier}"
 
 export interface Data 
 {
