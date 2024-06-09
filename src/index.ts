@@ -1,8 +1,12 @@
 import get from "./get"
-import * as generalStats from "./endpoints/generalStats"
+import { run } from "./endpoints/userSearch"
 
-generalStats.run().then(x => 
+async function h()
 {
-    if (x.success) x.data.usercount
-    else x.error
-}).catch()
+    const res = await run("24247827")
+
+    if (!res.success) return
+    if (res.data === null) return
+
+    res.data.user.username
+}

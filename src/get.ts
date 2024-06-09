@@ -25,6 +25,8 @@ interface ResponseFailed
 
 type ApiResponse<T> = ResponseSuccess<T> | ResponseFailed
 
+const xSession = `SESS-${Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)}`
+
 export default function <T>(endpoint: string): Promise<ResponseSuccess<T> | ResponseFailed> 
 {
     return new Promise<ResponseSuccess<T> | ResponseFailed>((resolve, reject) => 
@@ -35,7 +37,8 @@ export default function <T>(endpoint: string): Promise<ResponseSuccess<T> | Resp
             method: "GET",
             port: 443,
             headers: {
-                "Content-Type": "application/json" // me when no theorypack -. -
+                "Content-Type": "application/json", // me when no theorypack -. -
+                "X-Session-ID": xSession
             }
         }, 
         
